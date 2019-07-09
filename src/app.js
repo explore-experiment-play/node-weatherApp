@@ -5,6 +5,7 @@ const geocode = require('./utils/geocode')
 const forecast = require('./utils/forecast')
 
 const app = express()
+const port = process.env.PORT || 3000
 
 // paths for Express config
 const publicFolder = path.join(__dirname, "../public")
@@ -94,7 +95,7 @@ app.get('*', (req, res) => {
     })
 })
 
-app.listen(3000, () => {
-    console.log('server listening on port 3000')
+app.listen(port, () => {
+    console.log('server listening on port ' + port)
     console.log('use ctrl-c to stop')
 })
